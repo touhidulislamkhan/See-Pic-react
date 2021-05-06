@@ -3,7 +3,7 @@ import 'firebase/storage';
 import 'firebase/firestore';
 
 // Your web app's Firebase configuration
-var firebaseConfig = {
+const firebaseConfig = {
     apiKey: process.env.FIREBASE_API_KEY,
     authDomain: process.env.FIREBASE_AUTH_DOMAIN,
     projectId: process.env.FIREBASE_PROJECT_ID,
@@ -16,5 +16,6 @@ firebase.initializeApp(firebaseConfig);
 
 const projectStorage = firebase.storage();
 const projectFirestore = firebase.firestore();
+const timeStamp = firebase.firestore.FieldValue.serverTimestamp;
 
-export { projectStorage, projectFirestore };
+export { projectStorage, projectFirestore, timeStamp };
